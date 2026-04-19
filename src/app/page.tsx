@@ -285,10 +285,15 @@ export default function Home() {
           </Section>
 
           <div className="grid md:grid-cols-3 gap-6">
+            {/* Prices auto-derived from /api/pricing matrix:
+                  1 dev / 1 mo = 199₽
+                  3 dev / 1 mo = 199 + 2×70 = 339₽
+                  6 dev / 1 mo = 199 + 5×70 = 549₽
+                Live values are at https://api.tuman.help/api/pricing */}
             {[
-              { name: "Базовый", icon: "📦", devices: "1 устройство", price: "189", features: ["Все 6 серверов", "Безлимитный трафик", "Split Tunneling", "Обход блокировок"], popular: false },
-              { name: "Стандарт", icon: "👥", devices: "3 устройства", price: "329", features: ["Все 6 серверов", "Безлимитный трафик", "Split Tunneling", "Обход блокировок", "LTE обход"], popular: true },
-              { name: "Семейный", icon: "👨‍👩‍👧‍👦", devices: "6 устройств", price: "549", features: ["Все 6 серверов", "Безлимитный трафик", "Split Tunneling", "Обход блокировок", "LTE обход", "Приоритетная поддержка"], popular: false },
+              { name: "Базовый", icon: "📦", devices: "1 устройство", price: "199", features: ["Все 3 локации (FI/SE/DE)", "Безлимитный трафик", "Обход блокировок", "Обход БС (только мобильные)"], popular: false },
+              { name: "Стандарт", icon: "👥", devices: "3 устройства", price: "339", features: ["Все 3 локации (FI/SE/DE)", "Безлимитный трафик", "Обход блокировок", "Обход БС (только мобильные)"], popular: true },
+              { name: "Семейный", icon: "👨‍👩‍👧‍👦", devices: "6 устройств", price: "549", features: ["Все 3 локации (FI/SE/DE)", "Безлимитный трафик", "Обход блокировок", "Обход БС (только мобильные)", "Приоритетная поддержка"], popular: false },
             ].map((plan, i) => (
               <Section key={i} delay={i * 0.15}>
                 <div className={`glass-card-hover p-8 h-full relative ${plan.popular ? "border-accent/30 shadow-[0_0_40px_rgba(107,140,255,0.1)]" : ""}`}>
@@ -321,7 +326,7 @@ export default function Home() {
 
           <Section delay={0.3} className="text-center mt-8">
             <p className="text-muted">
-              🎁 3 дня бесплатно &middot; Оплата криптой или Telegram Stars &middot; Скидка 25% за 6 месяцев
+              🎁 3 дня бесплатно &middot; Оплата криптой или Telegram Stars &middot; Скидка до 30% за 12 месяцев
             </p>
           </Section>
         </div>

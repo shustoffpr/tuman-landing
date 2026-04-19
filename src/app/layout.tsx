@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: "TUMAN VPN",
               applicationCategory: "UtilitiesApplication",
               operatingSystem: "iOS, Android, Windows, macOS, Linux",
-              offers: { "@type": "Offer", price: "189", priceCurrency: "RUB", description: "Базовый тариф — 1 устройство" },
+              offers: { "@type": "Offer", price: "199", priceCurrency: "RUB", description: "Базовый тариф — 1 устройство, 30 дней" },
               aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "150" },
             }),
           }}
